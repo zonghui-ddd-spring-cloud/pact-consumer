@@ -6,11 +6,11 @@ The repo "pact-ec-app" is the sample project to show how to use the pact-jvm-con
 
 
 # How to Run It
-0. Install jdk 1.8+ and maven 3
-1. Git clone the ["pact-ec-app"](https://github.com/wubin28/pact-ec-app) repo.
-2. Run command "mvn clean test"
+0. Install jdk 1.8+ and gradle 4
+1. Git clone the ["pact-consumer"](https://github.com/zonghui-ddd-spring-cloud/pact-consumer) repo.
+2. Run command "./gradlew clean test"
 3. The pact file target/pacts/ec_app-review_service.json will be generated.
 
-# Please refer to the ["pact-ec-review-service"](https://github.com/wubin28/pact-ec-review-service) for how to implement the corresponding pact provider.
+# Please refer to the ["pact-producer"](https://github.com/zonghui-ddd-spring-cloud/pact-producer) for how to implement the corresponding pact provider.
 
 
