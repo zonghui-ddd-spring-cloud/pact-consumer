@@ -23,9 +23,9 @@ import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
 public class ProductServiceProxyContractTest {
     @Rule
-    public PactProviderRuleMk2 rule = new PactProviderRuleMk2("review_service", "localhost", 8080, PactSpecVersion.V3, this);
+    public PactProviderRuleMk2 rule = new PactProviderRuleMk2("producer_service", "localhost", 8080, PactSpecVersion.V3, this);
 
-    @Pact(provider="review_service", consumer="ec_app")
+    @Pact(provider="producer_service", consumer="consumer_app")
     public RequestResponsePact createPact(PactDslWithProvider builder) {
         // Pass the parameters to the provider by pact
         Map<String, Object> params = new HashMap<>();
@@ -69,7 +69,7 @@ public class ProductServiceProxyContractTest {
     }
 
     @Test
-    @PactVerification("review_service")
+    @PactVerification("producer_service")
     public void should_get_a_list_of_ratings() {
         ProductServiceProxy productServiceProxy = new ProductServiceProxy("http://localhost:8080/ratings?productId=123&userName=ben");
 
