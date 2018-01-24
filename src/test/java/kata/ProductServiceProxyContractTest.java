@@ -92,10 +92,5 @@ public class ProductServiceProxyContractTest {
         final List<Product> products = productServiceProxy.getProducts();
 
         assertThat(products.get(0).getName(), instanceOf(String.class));
-//        assertThat(actual.get(0).getProductId().length(), is(6));
-//        assertThat(actual.get(0).getUserName(), instanceOf(String.class));
-//        assertThat(actual.get(0).getRating(), instanceOf(String.class));
-//        assertThat(Integer.valueOf(actual.get(0).getRating()), greaterThanOrEqualTo(0));
-//        assertThat(Integer.valueOf(actual.get(0).getRating()), lessThanOrEqualTo(5));
     }
 }
