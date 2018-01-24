@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
-public class ReviewServiceProxyContractTest {
+public class ProductServiceProxyContractTest {
     @Rule
     public PactProviderRuleMk2 rule = new PactProviderRuleMk2("review_service", "localhost", 8080, PactSpecVersion.V3, this);
 
@@ -71,9 +71,9 @@ public class ReviewServiceProxyContractTest {
     @Test
     @PactVerification("review_service")
     public void should_get_a_list_of_ratings() {
-        ReviewServiceProxy reviewServiceProxy = new ReviewServiceProxy("http://localhost:8080/ratings?productId=123&userName=ben");
+        ProductServiceProxy productServiceProxy = new ProductServiceProxy("http://localhost:8080/ratings?productId=123&userName=ben");
 
-        final List<Rating> actual = reviewServiceProxy.getRatings();
+        final List<Rating> actual = productServiceProxy.getRatings();
 
         assertThat(actual.get(0).getProductId(), instanceOf(String.class));
         assertThat(actual.get(0).getProductId().length(), is(6));
@@ -87,9 +87,9 @@ public class ReviewServiceProxyContractTest {
     }
 
     public void should_get_a_list_of_products() {
-        ReviewServiceProxy reviewServiceProxy = new ReviewServiceProxy("http://localhost:8080/products");
+        ProductServiceProxy productServiceProxy = new ProductServiceProxy("http://localhost:8080/products");
 
-        final List<Product> products = reviewServiceProxy.getProducts();
+        final List<Product> products = productServiceProxy.getProducts();
 
         assertThat(products.get(0).getName(), instanceOf(String.class));
 //        assertThat(actual.get(0).getProductId().length(), is(6));

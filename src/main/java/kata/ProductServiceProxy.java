@@ -10,13 +10,13 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Component
-public class ReviewServiceProxy {
+public class ProductServiceProxy {
 
     private RestTemplate restTemplate;
     private String url;
 
     @Autowired
-    public ReviewServiceProxy(@Value("${provider}") String url) {
+    public ProductServiceProxy(@Value("${provider}") String url) {
         this.url = url;
         this.restTemplate = new RestTemplate();
     }
